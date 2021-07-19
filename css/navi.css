@@ -1,0 +1,207 @@
+.header {
+    margin: 0 auto;
+    background-color: #0a0a0a;
+}
+a.mqnic-logo {
+    background: url("../images/common/logo_mqnic.svg") no-repeat;
+    background-size: 100%;
+    text-indent: -10000px;
+    display: inline-block;
+}
+.header nav {
+    height: 50px;
+    padding: 14px 15px 0;
+    box-sizing: border-box;
+}
+.header nav .navbar {
+    display: none;
+}
+nav>a.mqnic-logo {
+    width: 80px;
+    height: 22px;
+    margin: 0;
+}
+.nav-toggler {
+    float: right;
+    width: 24px;
+    height: 16px;
+    background: url("../images/common/menu@3x.png") no-repeat;
+    background-size: 100%;
+    border: none;
+}
+
+.nav-toggler.icon-close {
+    background: url("../images/common/mo_btn_close.png") no-repeat;
+    width: 30px;
+    height: 30px;
+}
+section.dropdown-navi {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    z-index: 999999;
+    color: #ffffff;
+    display: none;
+}
+section.dropdown-navi::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+section.dropdown-navi ul.sub-menu-wrap {
+    overflow-y: scroll;
+    height: calc(100% - 50px);
+}
+section.dropdown-navi ul li {
+    text-align: center;
+}
+section.dropdown-navi ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+section.dropdown-navi ul li a:hover {
+    background-color: #333333;
+}
+section.dropdown-navi .menu {
+    height: 60px;
+    background-color: #0a0a0a;
+    font-size: 20px;
+    position: relative;
+}
+section.dropdown-navi .sub-menu-ul {
+    display: none;
+}
+section.dropdown-navi .sub-menu {
+    height: 44px;
+    background-color: #222222; 
+    font-size: 15px;
+
+}
+section.dropdown-navi li a span {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: inline-block;
+    background-image: url("../images/common/mo_btn_down.png");
+    width: 30px;
+    height: 30px;
+}
+section.dropdown-navi li a span.up {
+    background-image: url("../images/common/mo_btn_up.png");
+}
+@media all and (min-width: 480px) {                     /* tablet */
+    /* .wrap {
+        background: url("../images/main/main_banner01@2x.jpg") no-repeat center/cover;
+    } */
+    .nav-toggler.icon-close {
+        background: url("../images/common/tab_btn_close.png") no-repeat;
+        width: 30px;
+        height: 30px;
+    }
+    section.dropdown-navi {
+        width: 100%;
+        min-height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #000000;
+        z-index: 999999;
+        color: #ffffff;
+        display: none;
+    }
+    section.dropdown-navi ul li {
+        text-align: center;
+    }
+    section.dropdown-navi ul li a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section.dropdown-navi ul li a:hover {
+        background-color: #333333;
+    }
+    section.dropdown-navi .menu {
+        height: 98px;
+        background-color: #0a0a0a;
+        font-size: 25px;
+        position: relative;
+    }
+    section.dropdown-navi .sub-menu-ul {
+        display: none;
+    }
+    section.dropdown-navi .sub-menu {
+        height: 72px;
+        background-color: #222222; 
+        font-size: 20px;
+    
+    }
+    section.dropdown-navi li a span {
+        position: absolute;
+        right: 15px;
+        top: 34px;
+        display: inline-block;
+        background-image: url("../images/common/tab_btn_down.png");
+        width: 30px;
+        height: 30px;
+    }
+    section.dropdown-navi li a span.up {
+        background-image: url("../images/common/tab_btn_up.png");
+    }
+}
+
+@media all and (min-width: 1024px) {            /* pc */
+    .header nav {
+        /* max-width: 1304px; */
+        height: 70px;
+        box-sizing: border-box;
+        color: #ffffff;
+        display: block;
+        padding: 21px 15px 0;
+    }
+    .header nav .navbar {
+        width: 1290px;
+        display: block;
+        margin: 0 auto;
+    }
+    .header nav .navbar li {
+        width: 20%;
+        float: left;
+        text-align: center;
+        box-sizing: border-box;
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 1em;
+        line-height: 1.6;
+        letter-spacing: normal;
+        height: 28px;
+    }
+    .header nav .navbar li:nth-child(1) {
+        text-align: left;
+    }
+    .header nav .navbar li:nth-child(2) {
+        text-align: left;
+        padding-left: 30px
+    }
+    .header nav .navbar li:nth-child(4) {
+        text-align: right;
+        padding-right: 30px;
+    }
+    .header nav .navbar li:nth-child(5) {
+        text-align: right;
+    }
+    a.mqnic-logo {
+        width: 100px;
+        height: 28px;
+    }
+    nav>a.mqnic-logo {
+        display: none;
+    }
+    nav>button.nav-toggler {
+        display: none;
+    }
+   
+
+}
