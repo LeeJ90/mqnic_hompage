@@ -23,13 +23,25 @@ $(function($) {
     });
 
     // goto top
-    // $(window).scroll(function() {                
-    //     if ($(window).scrollTop() > 244) {
-    //         $('.gototop').show();
-    //     } else {
-    //         $('.gototop').hide();
-    //     }
-    // });
+    var gototopIcon_y = $(".gototop").offset().top;
+    var windowScroll_y = $(window).scrollTop() + $( window ).height();
+    
+    $(window).scroll(function() { 
+        if(window_width>1024) { 
+            windowScroll_y = $(window).scrollTop() + $( window ).height() - 80 - 50;
+        } else if(window_width<1024 && window_width>480) {
+            windowScroll_y = $(window).scrollTop() + $( window ).height() - 70 - 15;
+        } else if(window_width<480) {
+            windowScroll_y = $(window).scrollTop() + $( window ).height() - 50 - 15;
+        }
+
+        if( gototopIcon_y <= windowScroll_y ) {
+            $(".gototop").css("position", "fixed");
+        } else {
+            $(".gototop").css("position", "absolute");
+        }
+
+    });
     
     var window_width = $( window ).width();
     if(window_width>1024) {
@@ -55,29 +67,27 @@ $(function($) {
         var facebook_bottom_margin = 90;
     }
 
-    $(window).scroll(function() {    
+    // $(window).scroll(function() {    
 
-        console.log(gototopIcon_y);
+    //     windowScroll_y = $(window).scrollTop() + $( window ).height();  // 네 마우스
+    //     absolute_y = windowScroll_y - (icon_height / 2) + icon_gap_margin - (facebook_bottom_margin/2);                      // 네 마우스
+    //     gototopIconBottomWithMargin_y = gototopIcon_y + icon_height + icon_bottom_margin;                   // 탑버튼 바툼까지 화면 
 
-        windowScroll_y = $(window).scrollTop() + $( window ).height();  // 네 마우스
-        absolute_y = windowScroll_y - (icon_height / 2) + icon_gap_margin - (facebook_bottom_margin/2);                      // 네 마우스
-        gototopIconBottomWithMargin_y = gototopIcon_y + icon_height + icon_bottom_margin;                   // 탑버튼 바툼까지 화면 
-
-        if( gototopIcon_y <= absolute_y && windowScroll_y <= gototopIconBottomWithMargin_y  ) {
-            $(".facebook").css("position", "absolute");
-            $(".facebook").css("bottom", icon_height  + icon_gap_margin + icon_bottom_margin - facebook_bottom_margin);
-            $(".gototop").css("position", "absolute");
-        } 
-        else if ( windowScroll_y > gototopIconBottomWithMargin_y){
-            $(".facebook").css("position", "fixed");
-            $(".gototop").css("position", "fixed");
-        }
-        else {
-            $(".facebook").css("position", "fixed");
-            $(".facebook").css("bottom", icon_bottom_margin);
-            $(".gototop").css("position", "absolute");
-        }
-    });
+    //     if( gototopIcon_y <= absolute_y && windowScroll_y <= gototopIconBottomWithMargin_y  ) {
+    //         $(".facebook").css("position", "absolute");
+    //         $(".facebook").css("bottom", icon_height  + icon_gap_margin + icon_bottom_margin - facebook_bottom_margin);
+    //         $(".gototop").css("position", "absolute");
+    //     } 
+    //     else if ( windowScroll_y > gototopIconBottomWithMargin_y){
+    //         $(".facebook").css("position", "fixed");
+    //         $(".gototop").css("position", "fixed");
+    //     }
+    //     else {
+    //         $(".facebook").css("position", "fixed");
+    //         $(".facebook").css("bottom", icon_bottom_margin);
+    //         $(".gototop").css("position", "absolute");
+    //     }
+    // });
 
     $('.gototop').on('click', function(e) {
         e.preventDefault();

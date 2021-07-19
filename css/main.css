@@ -171,7 +171,7 @@ section.visual .business {
     border-top: 1px solid rgba(211,211,211,0.3)
 }
 .facebook {
-    position: fixed;
+    position: absolute;
     right: 50px;
     bottom: 50px;
     z-index: 99999;
@@ -505,7 +505,7 @@ section.recruit .recruit-area .right-area iframe {
     }
 
     .facebook {
-        position: fixed;
+        position: absolute;
         right: 15px;
         bottom: 166px;
         z-index: 99999;
@@ -742,7 +742,7 @@ section.recruit .recruit-area .right-area iframe {
         padding-top: 30px;
     }
     .facebook {
-        position: fixed;
+        position: absolute;
         right: 15px;
         bottom: 106px;
         z-index: 99999;
