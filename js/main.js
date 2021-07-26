@@ -121,7 +121,7 @@ $(function($) {
         if(visible_banner_first_no >= banner_total_count) {
             visible_banner_first_no = 0;
         }
-        
+    
         for(i=visible_banner_first_no; i<(visible_banner_first_no+visible_banner_count); i++) {
             $(".banner > ul > li:eq("+ i +")").css('display', 'block');
         }
@@ -133,12 +133,12 @@ $(function($) {
         for(i=0; i<banner_total_count; i++) {
             $(".banner > ul > li:eq("+ i +")").css('display', 'none');
         }
-
+        
         visible_banner_first_no = visible_banner_first_no - visible_banner_count;
         if(visible_banner_first_no < 0) {
-            visible_banner_first_no = banner_total_count - visible_banner_count;
+            visible_banner_first_no = banner_total_count - (banner_total_count % visible_banner_count);
         }
-
+        console.log(visible_banner_first_no);   
         for(i=visible_banner_first_no; i<(visible_banner_first_no+visible_banner_count); i++) {
             $(".banner > ul > li:eq("+ i +")").css('display', 'block');
         }
