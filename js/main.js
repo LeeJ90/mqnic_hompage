@@ -25,7 +25,8 @@ $(function($) {
     // goto top
     var gototopIcon_y = $(".gototop").offset().top;
     var windowScroll_y = $(window).scrollTop() + $( window ).height();
-    
+    var window_width = $( window ).width();
+
     $(window).scroll(function() { 
         if(window_width>1024) { 
             windowScroll_y = $(window).scrollTop() + $( window ).height() - 80 - 50;
@@ -42,52 +43,6 @@ $(function($) {
         }
 
     });
-    
-    var window_width = $( window ).width();
-    if(window_width>1024) {
-        var gototopIcon_y = $(".gototop").offset().top;
-        var icon_height = 80;
-        var icon_gap_margin = 14;
-        var icon_bottom_margin = 50;
-        var windowScroll_y = 0;
-        var facebook_bottom_margin = 0;
-    } else if(window_width<1024 && window_width>480) {
-        var gototopIcon_y = $(".gototop").offset().top;
-        var icon_height = 70;
-        var icon_gap_margin = 14;
-        var icon_bottom_margin = 166;
-        var windowScroll_y = 0;
-        var facebook_bottom_margin = 150;
-    } else if(window_width<480) {
-        var gototopIcon_y = $(".gototop").offset().top;
-        var icon_height = 50;
-        var icon_gap_margin = 10;
-        var icon_bottom_margin = 105;
-        var windowScroll_y = 0;
-        var facebook_bottom_margin = 90;
-    }
-
-    // $(window).scroll(function() {    
-
-    //     windowScroll_y = $(window).scrollTop() + $( window ).height();  // 네 마우스
-    //     absolute_y = windowScroll_y - (icon_height / 2) + icon_gap_margin - (facebook_bottom_margin/2);                      // 네 마우스
-    //     gototopIconBottomWithMargin_y = gototopIcon_y + icon_height + icon_bottom_margin;                   // 탑버튼 바툼까지 화면 
-
-    //     if( gototopIcon_y <= absolute_y && windowScroll_y <= gototopIconBottomWithMargin_y  ) {
-    //         $(".facebook").css("position", "absolute");
-    //         $(".facebook").css("bottom", icon_height  + icon_gap_margin + icon_bottom_margin - facebook_bottom_margin);
-    //         $(".gototop").css("position", "absolute");
-    //     } 
-    //     else if ( windowScroll_y > gototopIconBottomWithMargin_y){
-    //         $(".facebook").css("position", "fixed");
-    //         $(".gototop").css("position", "fixed");
-    //     }
-    //     else {
-    //         $(".facebook").css("position", "fixed");
-    //         $(".facebook").css("bottom", icon_bottom_margin);
-    //         $(".gototop").css("position", "absolute");
-    //     }
-    // });
 
     $('.gototop').on('click', function(e) {
         e.preventDefault();
